@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard({ name, image, from, price }) {
+export default function MediaCard({ name, image, from, price, url }) {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
@@ -36,7 +36,7 @@ export default function MediaCard({ name, image, from, price }) {
           </Typography>
         </CardContent>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" href={url} target="_blank">
           Go To {from}
         </Button>
       </CardActions>

@@ -71,7 +71,12 @@ function App() {
         }}>
           {
             result && result.resultTokopedia.data.searchProduct.products.map(x=>(
-              <RecipeReviewCard name={x.name} image={x.imageUrl} price={x.price} from="Tokopedia"/>
+              <RecipeReviewCard name={x.name} image={x.imageUrl} price={x.price} url={x.url} from="Tokopedia"/>
+            ))
+          }
+          {
+            result && result.resultTokopedia.data.displayAdsV3.data.map(x=>(
+              <RecipeReviewCard name={x.product.name} price={x.product.price} image={x.product.image.imageUrl} url={x.product.url} from="tokopedia" />
             ))
           }
         </div>
@@ -83,7 +88,7 @@ function App() {
         }}>
           {
             result && result.resultBukalapak.products.map(x=>(
-              <RecipeReviewCard name={x.name} image={x.small_images[0]} price={'Rp '+numberDivider(x.price)} from="Bukalapak"/>
+              <RecipeReviewCard name={x.name} image={x.small_images[0]} price={'Rp '+numberDivider(x.price)} url={x.url} from="Bukalapak"/>
             ))
           }
         </div>
